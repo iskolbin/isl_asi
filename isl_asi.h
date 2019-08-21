@@ -2,7 +2,7 @@
 #define ISL_ADAPTIVE_SIMPSONS_INTEGRATION_H_
 
 /*
- isl_asi.h - v0.2.0
+ isl_asi.h - v0.2.1
  public domain library with Adaptive Simpson's Integration Algroithm[1]
  converted from Python with some changes taken in https://en.wikipedia.org/wiki/Adaptive_Simpson%27s_method
  implemented for float and double
@@ -40,7 +40,7 @@ static float islasi_fintegrate_aux(float (*fun)(float, const float *), float a, 
 	float delta = left + right - whole;
 	float abs_delta = delta > 0 ? delta : -delta;
 	if (delta != delta) {
-		return 0
+		return 0;
 	} else if (max_recursion_depth <= 0 || abs_delta <= 15 * tol) {
 		return left + right + delta/15;
 	} else {
@@ -65,7 +65,7 @@ static double islasi_integrate_aux(double (*fun)(double, const double *), double
 	double delta = left + right - whole;
 	double abs_delta = delta > 0 ? delta : -delta;
 	if (delta != delta) {
-		return 0
+		return 0;
 	} else if (max_recursion_depth <= 0 || abs_delta <= 15 * tol) {
 		return left + right + delta / 15;
 	} else {
